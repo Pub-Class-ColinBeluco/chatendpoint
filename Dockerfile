@@ -1,8 +1,7 @@
 # ===== Build Stage =====
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
-# Copia o arquivo de configuração do Maven e baixa
-dependências
+# Copia o arquivo de configuração do Maven e baixa dependências
 COPY pom.xml .
 RUN mvn -q -B dependency:go-offline
 # Copia o código-fonte e compila o projeto
